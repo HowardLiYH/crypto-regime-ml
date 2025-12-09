@@ -267,28 +267,6 @@ All features are standardized using \texttt{StandardScaler} fitted only on train
 
 We implement \textbf{expanding window walk-forward cross-validation} with three folds. Unlike standard k-fold CV, each subsequent fold uses more training data, simulating realistic model retraining as new data arrives.
 
-\subsubsection{Visual Overview}
-
-The following diagram illustrates our expanding window approach:
-
-\begin{verbatim}
-    2021      2022      2023      2024      2025
-    |         |         |         |         |
-    Nov       Aug       Jun       Apr       Nov
-    |---------|---------|---------|---------|
-    |                                       |
-    | FOLD 1: Train---->                    |
-    |                   Test----------->    |
-    |                                       |
-    | FOLD 2: Train------------>            |
-    |                           Test------> |
-    |                                       |
-    | FOLD 3: Train------------------>      |
-    |                                 Test->|
-    |---------|---------|---------|---------|
-    Nov'21   Aug'22   Jun'23   Apr'24   Nov'25
-\end{verbatim}
-
 \subsubsection{Detailed Fold Structure}
 
 For $n\_folds=3$ with $\sim$8,767 samples (after feature computation and dropna):
@@ -1397,6 +1375,19 @@ This research provides definitive evidence that machine learning models for cryp
 The disconnect between accuracy and profitability---where lower-accuracy models dramatically outperform higher-accuracy models in P\&L---challenges the conventional wisdom of maximizing predictive accuracy. Instead, practitioners should optimize for economic metrics directly and implement regime-conditional strategies that combine buy-and-hold for bull markets with ML-based protection during uncertainty.
 
 \textbf{Our central thesis stands validated:} ML models serve as sophisticated risk management tools within a broader investment framework, capturing cryptocurrency upside through passive exposure while limiting drawdowns through ML-driven position management.
+
+\subsection{Code and Data Availability}
+
+To facilitate reproducibility and encourage further research, we release our complete implementation including:
+
+\begin{itemize}[noitemsep]
+    \item Full evaluation notebook with all 17 experiments and 19 model implementations
+    \item Historical 4-hour OHLCV data for BTC, ETH, SOL, XRP, and DOGE (Nov 2021--Nov 2025)
+    \item Pre-trained model artifacts and evaluation results
+    \item All visualization code and generated figures
+\end{itemize}
+
+\noindent\textbf{Repository:} \url{https://github.com/HowardLiYH/crypto-regime-ml}
 
 %==============================================================================
 % REFERENCES
