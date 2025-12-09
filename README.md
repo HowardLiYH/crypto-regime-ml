@@ -29,6 +29,12 @@ This repository contains the code, data, and pre-trained models for our comprehe
 crypto-regime-ml/
 ├── model_eval_reorganized.ipynb   # Main evaluation notebook (17 experiments)
 ├── final_report.tex               # NeurIPS-style paper
+├── Base_Models/                   # Individual model implementations
+│   ├── RF.ipynb                   # Random Forest
+│   ├── SVM.ipynb                  # Support Vector Machine
+│   ├── XGBoost.ipynb              # Gradient Boosting
+│   ├── GRU.ipynb                  # Gated Recurrent Unit
+│   └── PCA+HMM.ipynb              # PCA + Hidden Markov Model
 ├── Bybit_CSV_Data/                # Historical OHLCV data
 │   ├── Bybit_BTC.csv
 │   ├── Bybit_ETH.csv
@@ -202,4 +208,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Howard Li - li88@sas.upenn.edu
 - Nitin Lodha - lodha1@seas.upenn.edu
 - Akshat Bokdia - abokdia@seas.upenn.edu
-
